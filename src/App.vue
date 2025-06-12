@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import ClickCounter from './components/ClickCounter.vue';
+import ItemList from './components/ItemList.vue';
+
+defineProps<{
+  msg: string
+}>()
 </script>
 
 <template>
@@ -9,6 +15,9 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <h1>{{ msg }}</h1>
+      <ClickCounter />
+      <ItemList />
     </div>
   </header>
 
@@ -18,30 +27,7 @@ import TheWelcome from './components/TheWelcome.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+a {
+  color: #42b983;
 }
 </style>
